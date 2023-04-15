@@ -22,4 +22,4 @@ RUN pip install -r requirements.txt
 RUN apt install libsqlite3-mod-spatialite
 ADD . /code/
 
-CMD gunicorn RoadScan.wsgi:application --bind 0.0.0.0:8080:$PORT
+CMD gunicorn RoadScan.wsgi:application --bind 0.0.0.0:$PORT

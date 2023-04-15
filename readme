@@ -9,8 +9,11 @@ Deploying to heroku
 2. Push to heroku
 
         sudo heroku container:push web -a=stormy-badlands-01638
+        sudo heroku container:push web -a=hidden-oasis-70187
 
 3. Release app
 
-        sudo heroku container:release  -a stormy-badlands-01638 web
+        sudo heroku container:release  web -a <app-name>
+        sudo heroku container:release  web -a hidden-oasis-70187
+
 
