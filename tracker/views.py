@@ -30,6 +30,7 @@ class RoadCrackListAPIView(ListAPIView):
         existing_crack = RoadCrack.objects.annotate(distance=Distance('location', location))\
                                           .order_by('distance').first()
         if location.distance(existing_crack.location) < 1:
+            existing_crack.requested_amount += 1
             if existing_crack.requested_amount == 2:
                 existing_crack.approved = True
             else:
